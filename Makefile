@@ -8,6 +8,10 @@ HOST_PORT=54322
 postgres:
 	docker run --name $(DB_CONTAINER) -e POSTGRES_USER=$(DB_USER) -e POSTGRES_PASSWORD=$(DB_PASSWORD) -p $(HOST_PORT):$(CONTAINER_DB_PORT) -d postgres:16-alpine
 
+
+postgres-restart:
+	docker restart $(DB_CONTAINER)
+
 postgres-stop:
 	docker stop $(DB_CONTAINER)
 
